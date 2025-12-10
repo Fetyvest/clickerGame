@@ -43,6 +43,24 @@ function clicksSuff(){
             localStorage.clicksAndSuff = clicksAndSuff
             localStorage.suff = suff
             break
+        case 3:
+            suff = 'B'
+            clicksAndSuff = ((clicks / (10 ** (3 * 3))).toFixed(2)) + suff
+            localStorage.clicksAndSuff = clicksAndSuff
+            localStorage.suff = suff
+            break
+        case 4:
+            suff = 'T'
+            clicksAndSuff = ((clicks / (10 ** (3 * 4))).toFixed(2)) + suff
+            localStorage.clicksAndSuff = clicksAndSuff
+            localStorage.suff = suff
+            break
+        case 5:
+            suff = 'Qa'
+            clicksAndSuff = ((clicks / (10 ** (3 * 5))).toFixed(2)) + suff
+            localStorage.clicksAndSuff = clicksAndSuff
+            localStorage.suff = suff
+            break                                
         default:
             clicksAndSuff = 'Слишком большое число'
     }
