@@ -9,5 +9,5 @@ headerInfo.addEventListener('click', () => {
 })
 
 headerConsole.addEventListener('click', () => {
-    alert('Это функция скоро появится...')
+    alert('Скоро здесь что-то будет...')
 })

@@ -47,6 +47,8 @@
 .main__click-block {
     width: 400px;
     height: 400px;
+    user-select: none;
+    cursor: pointer;
     background-color: #000;
     border: 5px solid darkblue;
     border-radius: 15px;
