@@ -53,9 +53,15 @@
     border: 5px solid darkblue;
     border-radius: 15px;
     transition: transform 0.05s;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
 }
 
 .main__click-block:active{
+    transform: scale(1.05);
+}
+
+.main__click-active{
     transform: scale(1.05);
 }
 

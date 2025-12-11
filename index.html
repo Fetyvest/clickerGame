@@ -13,9 +13,21 @@
         <header class="header">
             <div class="container">
                 <div class="header__content">
-                    <button class="header__console header__button" id="headerConsole"><p>?</p></button>
+                    <!-- <button class="header__console header__button" id="headerConsole"><p>?</p></button> -->
+                    <div class="header__wrap">
+                        <div class="money">
+                            <div class="money__gold money__block">
+                                <div class="money__gold-pic"></div>
+                                <div class="money__gold-count" id="goldCount">0</div>
+                            </div>
+                            <div class="money__emerald money__block">
+                                <div class="money__emerald-pic"></div>
+                                <div class="money__emerald-count" id="emeraldCount">0</div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="header__title">Clicker game</div>
-                    <button class="header__info header__button" id="headerInfo"><p>i</p></button>
+                    <div class="header__wrap"><button class="header__info header__button" id="headerInfo"><p>i</p></button></div>
                 </div>
             </div>
         </header>
@@ -35,9 +47,9 @@
     </div>
     <div class="modal-headerInfo" id="modalHeaderInfo">
         <div class="modal-headerInfo__block">
-            <div class="modal-headerInfo__title">Внимание!</div>
+            <div class="modal-headerInfo__title" id="clearButton">Внимание!</div>
             <div class="modal-headerInfo__text">Все данные хранятся у вас в браузере, поэтому клики <b>сохраняются</b> при перезагрузке страницы, но <b>не сохраняются</b> при смене устройства</div>
-            <div class="modal-headerInfo__version">Version: 0.1.1</div>
+            <div class="modal-headerInfo__version">Version: 0.2.0</div>
         </div>
     </div>
 </body>
