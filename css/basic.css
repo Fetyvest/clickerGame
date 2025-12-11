@@ -67,6 +67,7 @@
     text-align: center; 
     width: 100%;
     top: -14%;
+    user-select: none;
 }
 
 .money {
@@ -151,7 +152,6 @@
 .modal-headerInfo__title {
     font-size: 50px;
     font-weight: 700;
-    user-select: none;
 }
 
 .modal-headerInfo__text {

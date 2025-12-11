@@ -1,5 +1,4 @@
 const headerInfo = document.getElementById('headerInfo')
-const headerConsole = document.getElementById('headerConsole')
 const mainClicks = document.getElementById('mainClicks')
 const mainSpeed = document.getElementById('mainSpeed')
 const mainBlock = document.getElementById('mainBlock')

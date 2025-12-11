@@ -1,7 +1,7 @@
 const modalHeaderInfo = document.getElementById('modalHeaderInfo')
 const gold = document.getElementById('goldCount')
 const emerald = document.getElementById('emeraldCount')
-const clearButton = document.getElementById('clearButton')
+// const clearButton = document.getElementById('clearButton')
 
 let goldCount = 0
 let goldAndSuff = '0'
@@ -27,7 +27,31 @@ headerInfo.addEventListener('click', () => {
     modalHeaderInfo.style.display = 'flex'
 })
 
-clearButton.addEventListener('mousedown', () => {
+headerInfo.addEventListener('mousedown', () => {
+    if(!isMobile){
+        pressTimer = setTimeout(() => {
+            let resetProgressFlag = confirm('Вы действительно хотите сбросить весь прогресс? Вы не сможете его восстановить и вам ничего за это не будет!')
+            if(resetProgressFlag){
+                clearProgress()
+            }
+            resetProgressBtnPressFlag = 1
+        }, 3000);
+    }
+});
+
+headerInfo.addEventListener('mouseup', () => {
+    clearTimeout(pressTimer);
+    resetProgressBtnPressFlag = 0
+});
+
+headerInfo.addEventListener('mouseleave', () => {
+    if(resetProgressBtnPressFlag){
+        clearTimeout(pressTimer);
+    }
+});
+
+headerInfo.addEventListener('touchstart', () => {
+    isMobile = true
     pressTimer = setTimeout(() => {
         let resetProgressFlag = confirm('Вы действительно хотите сбросить весь прогресс? Вы не сможете его восстановить и вам ничего за это не будет!')
         if(resetProgressFlag){
@@ -35,18 +59,21 @@ clearButton.addEventListener('mousedown', () => {
         }
         resetProgressBtnPressFlag = 1
     }, 3000);
+    setTimeout(() => {
+        isMobile = false;
+    }, 500)
 });
 
-clearButton.addEventListener('mouseup', () => {
+headerInfo.addEventListener('touchend', () => {
     clearTimeout(pressTimer);
     resetProgressBtnPressFlag = 0
 });
 
-clearButton.addEventListener('mouseleave', () => {
-    if(resetProgressBtnPressFlag){
-        clearTimeout(pressTimer);
-    }
-});
+// headerInfo.addEventListener('touchleave', () => {
+//     if(resetProgressBtnPressFlag){
+//         clearTimeout(pressTimer);
+//     }
+// });
 
 // headerConsole.addEventListener('click', () => {
 //     alert('Скоро здесь что-то будет...')
