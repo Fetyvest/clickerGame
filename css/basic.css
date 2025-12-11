@@ -151,6 +151,7 @@
 .modal-headerInfo__title {
     font-size: 50px;
     font-weight: 700;
+    user-select: none;
 }
 
 .modal-headerInfo__text {
