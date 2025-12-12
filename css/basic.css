@@ -123,7 +123,6 @@
 }
 
 .modal-headerInfo {
-    /* display: none; */
     position: fixed;
     z-index: 10;
     width: 100vw;
@@ -131,7 +130,7 @@
     background-color: #00000088;
     top: 0;
     left: 0;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 }

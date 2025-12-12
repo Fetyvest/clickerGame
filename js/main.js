@@ -9,6 +9,7 @@ let emeraldCount = 0
 let emeraldAndSuff = '0'
 let resetProgressBtnPressFlag = 0
 let isMobile = false
+let isMainModalWindow
 
 let stats = {
     clicks: 0,
@@ -19,12 +20,17 @@ let stats = {
     sessionCount: 0,
 }
 
+
 modalHeaderInfo.addEventListener('click', () => {
     modalHeaderInfo.style.display = 'none'
+    isMainModalWindow = 0
+    localStorage.isMainModalWindow = isMainModalWindow
 })
 
 headerInfo.addEventListener('click', () => {
     modalHeaderInfo.style.display = 'flex'
+    isMainModalWindow = 1
+    localStorage.isMainModalWindow = isMainModalWindow
 })
 
 headerInfo.addEventListener('mousedown', () => {
@@ -87,11 +93,13 @@ function saveProgress(){
     localStorage.goldAndSuff = goldAndSuff
     localStorage.emerald = emeraldCount
     localStorage.emeraldAndSuff = emeraldAndSuff
+    localStorage.isMainModalWindow = isMainModalWindow
 }
 
 function loadProgress(){
     const statsLoad = localStorage.getItem('stats')
     stats = JSON.parse(statsLoad);
+    isMainModalWindow = localStorage.getItem('isMainModalWindow')
 }
 
 function clearProgress(){

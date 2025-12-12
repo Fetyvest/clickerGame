@@ -9,6 +9,11 @@ let clicksPerSec = 0
 let maxClicksPerSec = 0
 let clicksTime = []
 let maxLengthClicks = 0
+let keyClicks = {
+    isSpaceDown: 0,
+    isEnterDown: 0,
+    isEnterNumDown: 0,
+}
 
 
 function pageStart(){    
@@ -27,6 +32,7 @@ function pageStart(){
     if(localStorage.getItem('stats') != undefined){
         loadProgress()
     }
+    
     if(stats.sessionCount == undefined){
         stats.sessionCount = 1
         saveProgress()
@@ -34,6 +40,13 @@ function pageStart(){
     else{
         stats.sessionCount += 1
         saveProgress()
+    }
+
+    if(isMainModalWindow == 1){
+        modalHeaderInfo.style.display = 'flex'
+    }
+    else{
+        modalHeaderInfo.style.display = 'none'
     }
 }
 
@@ -88,6 +101,63 @@ pageStart()
 mainBlock.addEventListener(('click'), () => {
     if(!isMobile){
         click()
+    }
+})
+
+document.addEventListener('keydown', (event) => {
+    if(event.code === 'Space' && keyClicks.isSpaceDown == 0){
+        click()
+        keyClicks.isSpaceDown = 1
+    }
+    if(event.code === 'Space'){
+        mainBlock.classList.add('main__click-active')
+    }
+})
+
+document.addEventListener('keyup', (event) => {
+    if(event.code === 'Space' && keyClicks.isSpaceDown == 1){
+        keyClicks.isSpaceDown = 0
+    }
+    if(event.code === 'Space'){
+        mainBlock.classList.remove('main__click-active')
+    }
+})
+
+document.addEventListener('keydown', (event) => {
+    if(event.code === 'Enter' && keyClicks.isEnterDown == 0){
+        click()
+        keyClicks.isEnterDown = 1
+    }
+    if(event.code === 'Enter'){
+        mainBlock.classList.add('main__click-active')
+    }
+})
+
+document.addEventListener('keyup', (event) => {
+    if(event.code === 'Enter' && keyClicks.isEnterDown == 1){
+        keyClicks.isEnterDown = 0
+    }
+    if(event.code === 'Enter'){
+        mainBlock.classList.remove('main__click-active')
+    }
+})
+
+document.addEventListener('keydown', (event) => {
+    if(event.code === 'NumpadEnter' && keyClicks.isEnterNumDown == 0){
+        click()
+        keyClicks.isEnterNumDown = 1
+    }
+    if(event.code === 'NumpadEnter'){
+        mainBlock.classList.add('main__click-active')
+    }
+})
+
+document.addEventListener('keyup', (event) => {
+    if(event.code === 'NumpadEnter' && keyClicks.isEnterNumDown == 1){
+        keyClicks.isEnterNumDown = 0
+    }
+    if(event.code === 'NumpadEnter'){
+        mainBlock.classList.remove('main__click-active')
     }
 })
 
