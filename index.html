@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/main.css">
     <script src="js/main.js" defer></script>
     <script src="js/modules/center.js" defer></script>
+    <script src="js/end.js" defer></script>
 </head>
 <body>
     <div class="wrapper">
@@ -18,11 +19,11 @@
                         <div class="money">
                             <div class="money__gold money__block">
                                 <div class="money__gold-pic"></div>
-                                <div class="money__gold-count" id="goldCount">0</div>
+                                <div class="money__gold-count"><span id="goldCount">0</span><span id="suffGold"></span></div>
                             </div>
                             <div class="money__emerald money__block">
                                 <div class="money__emerald-pic"></div>
-                                <div class="money__emerald-count" id="emeraldCount">0</div>
+                                <div class="money__emerald-count"><span id="emeraldCount">0</span><span id="suffEmerald"></span></div>
                             </div>
                         </div>
                     </div>
@@ -35,8 +36,8 @@
             <div class="container">
                 <div class="main__content">
                     <div class="main__info">
-                        <div class="main__clicks"><span id="mainClicks">0</span> <br class="main__br">кликов</div>
-                        <div class="main__speed"><span id="mainSpeed">0</span> <br class="main__br">кликов в секунду</div>
+                        <div class="main__clicks"><span id="mainClicks">0</span><span id="mainSuff"></span> <br class="main__br">кликов</div>
+                        <div class="main__speed"><span id="mainSpeed">0</span><span id="suffSpeed"></span> <br class="main__br">кликов в секунду</div>
                     </div>
                     <div class="main__block">
                         <div class="main__click-block" id="mainBlock"></div>
@@ -49,9 +50,13 @@
         <div class="modal-headerInfo__block">
             <div class="modal-headerInfo__title">Внимание!</div>
             <div class="modal-headerInfo__text">Все данные хранятся у вас в браузере, поэтому клики <b>сохраняются</b> при перезагрузке страницы, но <b>не сохраняются</b> при смене устройства</div>
-            <div class="modal-headerInfo__version">Version: 0.2.3</div>
+            <div class="modal-headerInfo__version">Version: <span id="versionElement">f.e.t</span></div>
+        </div>
+        <div class="warning-headerInfo__block" id="emergencyModal">
+            <div class="warning-headerInfo__title">Предупреждение!</div>
+            <div class="warning-headerInfo__text">Игра перешла на новую версию, где её код был сильно переписан и теперь, по большей части, он не совместим со старым! Настаятельно рекомендую сбросить весь прогресс кнопкой ниже!</div>
+            <button class="warning-headerInfo__btn" id="emergencyBtn">Reset progress</button>
         </div>
     </div>
 </body>
-
 </html>
